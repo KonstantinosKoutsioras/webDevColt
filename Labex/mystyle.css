@@ -1,0 +1,277 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+}
+
+body {
+	background-color: rgb(255, 255, 255);
+	background-image: url("imgs/p6.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+#related h1{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.social-media p {
+	font-size: 15px;
+	color: white;
+}
+header {
+	text-align: center;
+}
+
+.title {
+	font-family: 'Delta Gothic One', cursive;
+	font-size: 27px;
+	margin: 0 0 px;
+	color: rgb(70, 156, 70);
+}
+
+.title a {
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.subtitle {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 8px;
+	letter-spacing: 2px;
+	margin: 0;
+	font-weight: 700;
+	color: rgb(12, 12, 12);
+}
+
+
+
+.social-media {
+	position: absolute;
+	right: 0;
+}
+
+.social-media__link {
+	color: lightgreen;
+}
+
+i {
+	font-size: 30px;
+}
+
+.main-menu {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	background: gray;
+	width: 45vw;
+	max-width: 450px;
+	min-width: 300px;
+	margin: 25px auto 10px;
+	justify-content: space-between;
+
+}
+
+.main-menu > li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.main-menu > li a:hover {
+	border-bottom: 2px solid rgb(7, 187, 241);
+}
+
+#related {
+	background: rgb(70, 199, 92);
+	padding: 0.75rem;
+	width: 75vw;
+	max-width: 700px;
+	border:grey 5px outset;
+	margin: 0 auto;
+}
+
+#related article {
+	margin: 5px 0px;
+}
+
+.article-body {
+	display: flex;
+	justify-content: space-between;
+}
+
+.article-body p {
+	width: 75%;
+}
+
+.article-body img {
+	height: 150px;
+	width: 250px;
+	object-fit: cover;
+	object-position: bottom;
+	margin-left: 1em;
+}
+
+.footer {
+	background-color: rgba(40, 40, 40, 0.9);
+	padding: 1em 0;
+	margin-top: 3em;
+}
+
+.contain {
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+
+.contain ul {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	margin: 1em 0;
+}
+
+.contain li {
+	padding: 0 0.5em;
+	border-right: 2px solid white;
+}
+
+.contain li:last-child {
+	border: none;
+}
+
+
+
+
+.contain h1 {
+	font-family:'Delta Gothic One', cursive; 
+	font-size: 18px;
+	color:white;
+	
+}
+.contain p {
+	font-size: 15px;
+	color:white;
+	
+}
+
+.contain li a {
+	color: rgb(134, 134, 134);
+}
+
+.social-media1 {
+	position: absolute;
+	right: 0;
+	transform: translateY(-100%);
+}
+
+.social-media1 i {
+	color: lightgreen;
+}
+
+.blog h1 {
+	text-align: center;
+	margin-bottom: 0.75em;
+}
+
+.blog .article-body {
+	margin-bottom: 2em;
+}
+
+.blog:last-child .article-body {
+	margin: 0;
+}
+
+.blog img {
+	margin: 0;
+	margin-right: 1em;
+}
+
+form > * {
+	display: block;
+	width: 75%;
+	margin: 0 auto;
+}
+
+.contact h1 {
+	text-align: center;
+}
+
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Some padding */ 
+    border: 1px solid rgb(204, 204, 204); /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  
+  input[type=submit] {
+    background-color: grey;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(0, 0, 0);
+	transform: scale(1.1);
+	transition: all 0.75s
+
+  }
+  
+
+label {
+	margin: 0;
+}
+.meetour {
+   text-align: center;
+   margin-bottom: 2em;
+}
+
+.meetour2{
+	text-align: center;
+}
+
+.clickmeh1{
+	text-align: center;
+	margin-top: -50px;
+	color:black;
+}
+
+.clickme {
+	text-decoration: none;
+	color:black;
+	text-transform: uppercase;
+	font-weight: 700;
+	background-color: gold;
+	padding: 1em 2em;
+	border-radius: 20px;	
+}
+
+.underconstraction {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 80vh;
+}
+
+.underconstraction img {
+	width: 400px;
+
+}
+
+iframe {
+	display: block;
+	width: 50vw;
+	margin: 0 auto;
+}

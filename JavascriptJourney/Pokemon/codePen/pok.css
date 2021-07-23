@@ -1,0 +1,91 @@
+/* REMOVING THE DEFAULT STYLINGS FROM THE PAGE */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    background-color: #27272C;
+    color: #E6E3E9;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    border-bottom: 5px solid rgba(192, 101, 192, 0.6);
+}
+
+.generation-title {
+    margin: 14px 8px;
+    padding: 5px;
+    
+    border: 1px solid rgba(192, 101, 192, 0.6);
+    border-radius: 10px;
+    background-color: #212125;
+    /* control duration of animations on hover */
+    transition: transform 0.4s, background-color 0.4s;
+}
+
+.generation-title:hover {
+    transform: translateY(-0.2em);
+    background-color: rgba(192, 101, 192, 0.6);
+}
+
+.generation-title.opened {
+    color: #E6E3E9;
+    background-image: linear-gradient(120deg, #5f57d1, rgb(192, 101, 192));
+  border: 1px solid #212125;
+}
+
+a {
+    color: #E6E3E9;
+    font-weight: light;
+}
+a:hover {
+    cursor: pointer;
+}
+
+/* target first span inside our title (the arrow) */
+.generation-title.opened span:first-child {
+    display: inline-block;
+    transform: rotate(90deg);
+    transition-duration: 1s;
+}
+
+.generation-container {
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 8px;
+}
+
+.pokemon {
+    display: inline-block;
+    text-align: center;
+    margin: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+.pokemon img {
+    display: block;
+}
+
+.link:hover{
+    text-decoration: underline;
+    color: rgba(192, 101, 192, 0.6);
+}
+
+.credits {
+    margin-top: 12px;
+    padding: 5px 10px;
+}
+
+/* --- Big Screens setup --- */
+@media(min-width: 800px) {
+    .credits {
+        /* more distance for big screens */
+        margin-top: 110px;
+    }
+}

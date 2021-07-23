@@ -1,0 +1,14 @@
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: peachpuff;
+    color: greenyellow;
+}
+
+table {
+    margin: 500px 500px;
+}

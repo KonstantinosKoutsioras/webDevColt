@@ -1,0 +1,16 @@
+.pokemon {
+    display: inline-block;
+    font-family: 'Odibee Sans', cursive;
+}
+
+h1 {
+    font-family: 'Odibee Sans', cursive;
+    text-align: center;
+}
+
+.pkmnNum {
+    font-size: 0.5em;
+    display: block;
+    text-align: center;
+}
+
