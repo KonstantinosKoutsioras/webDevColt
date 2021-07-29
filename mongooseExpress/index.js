@@ -53,7 +53,7 @@ app.get('/products/:id/edit', async (req, res) => {
     const { id } = req.params;
     console.log(id);
     const product = await Product.findById(id);
-    console.log(product)
+    console.log(product);
     res.render('products/edit', { product, categories });
 })
 
