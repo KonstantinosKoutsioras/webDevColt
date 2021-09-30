@@ -97,6 +97,6 @@ app.use((err, req, res, next) => {
     res.status(status).send(message);
 })
 
-app.listen(3000, () => {
-    console.log("Express connection went through");
+app.listen(8080, () => {
+    console.log("Express connection went through on port 8080.");
 })
