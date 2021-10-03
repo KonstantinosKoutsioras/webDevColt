@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 mongoose.connect('mongodb://localhost:27017/relationshipDemo', {
     useNewUrlParser: true,
@@ -7,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/relationshipDemo', {
     .then(() => console.log('yes hello this is mongoose'))
     .catch(err => console.log('HOLY SHIT WHAT\n', err));
 
-const productSchema = new mongoose.Schema({
+const productSchema = new Schema({
     name: String,
     price: Number,
     season: {
@@ -16,11 +17,43 @@ const productSchema = new mongoose.Schema({
     }
 });
 
-const Product = mongoose.model('Product', productSchema);
+const farmSchema = new Schema({
+    name: String,
+    city: String,
+    products: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
+})
 
-Product.insertMany([
-    { name: 'Goddess Melon', price: 4.99, season: 'Summer' },
-    { name: 'Sugar Baby Melon', price: 4.99, season: 'Summer' },
-    { name: 'Asparagus', price: 3.99, season: 'Spring' }
-])
-    .then(() => mongoose.connection.close())
+const Product = mongoose.model('Product', productSchema);
+const Farm = mongoose.model('Farm', farmSchema);
+
+// Product.insertMany([
+//     { name: 'Goddess Melon', price: 4.99, season: 'Summer' },
+//     { name: 'Sugar Baby Melon', price: 4.99, season: 'Summer' },
+//     { name: 'Asparagus', price: 3.99, season: 'Spring' }
+// ])
+//     .then(() => mongoose.connection.close())
+
+// const makeFarm = async () => {
+//     const farm = new Farm({ name: 'Full Belly Farms', city: 'Guinda, CA' });
+//     const melon = await Product.findOne({ name: 'Goddess Melon' });
+
+//     farm.products.push(melon);
+//     await farm.save();
+//     console.log(farm);
+// }
+// makeFarm().then(() => mongoose.connection.close());
+
+// const addProduct = async () => {
+//     const farm = await Farm.findOne({ name: 'Full Belly Farms' });
+//     const watermelon = await Product.findOne({ name: 'Sugar Baby Melon' });
+//     farm.products.push(watermelon);
+//     await farm.save();
+//     console.log(farm);
+// }
+
+Farm.findOne({ name: 'Full Belly Farms' })
+    .populate('products')
+    .then(farm => {
+        console.log(farm)
+        mongoose.connection.close();
+    });
