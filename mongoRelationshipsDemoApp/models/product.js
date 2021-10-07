@@ -15,7 +15,7 @@ const productSchema = new Schema({
         lowercase: true,
         enum: ['fruit', 'vegetable', 'dairy']
     },
-    farmId: {
+    farm: {
         type: Schema.Types.ObjectId,
         ref: 'Farm'
     }
