@@ -5,6 +5,12 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const flash = require('connect-flash');
+
+const sessionOptions = { secret: 'secret', resave: false, saveUninitialized: false };
+app.use(session(sessionOptions));
+app.use(flash());
 
 const Product = require('./models/product');
 const Farm = require('./models/farm');
@@ -30,7 +36,7 @@ const categories = ['Fruit', 'Vegetable', 'Dairy'];
 
 app.get('/farms', async (req, res) => {
     const farms = await Farm.find({});
-    res.render('farms/index', { farms });
+    res.render('farms/index', { farms, messages: req.flash('success') });
 })
 
 app.get('/farms/new', (req, res) => {
@@ -52,6 +58,7 @@ app.delete('/farms/:id', async (req, res) => {
 app.post('/farms', async (req, res) => {
     const farm = new Farm(req.body);
     await farm.save();
+    req.flash('success', 'successfuly made a new farm')
     res.redirect('/farms');
 })
 
